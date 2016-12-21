@@ -35,5 +35,7 @@ class FizzBuzzTestCase < Test::Unit::TestCase
     f = FizzBuzz.new(1,100)
 
     assert_equal "Fizz", f.translate(3)
+    assert_equal "Fizz", f.translate(6)
+    assert_equal "Fizz", f.translate(9)
   end
 end
