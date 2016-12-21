@@ -12,8 +12,12 @@ class FizzBuzz
       return number
     end
   end
-end
 
+  def to_s
+    all = (0..100).collect { |num| translate(num) }
+    all.to_s
+  end
+end
 
 
 class FizzBuzzTestCase < Test::Unit::TestCase
