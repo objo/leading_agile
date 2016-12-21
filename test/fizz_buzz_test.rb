@@ -9,6 +9,8 @@ class FizzBuzz
   def translate(number)
     if (number % 3 == 0)
       return "Fizz"
+    elsif (number % 5 == 0)
+      return "Buzz"
     else
       return number
     end
@@ -37,5 +39,12 @@ class FizzBuzzTestCase < Test::Unit::TestCase
     assert_equal "Fizz", f.translate(3)
     assert_equal "Fizz", f.translate(6)
     assert_equal "Fizz", f.translate(9)
+  end
+
+  def test_number_divisible_by_five_returns_buzz
+    f = FizzBuzz.new(1,100)
+
+    assert_equal "Buzz", f.translate(5)
+    assert_equal "Buzz", f.translate(10)
   end
 end
