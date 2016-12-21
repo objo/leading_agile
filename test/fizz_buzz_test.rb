@@ -47,4 +47,13 @@ class FizzBuzzTestCase < Test::Unit::TestCase
     assert_equal "Buzz", f.translate(5)
     assert_equal "Buzz", f.translate(10)
   end
+
+  def test_numbers_not_divisible_by_three_or_five_return_actual_number
+    f = FizzBuzz.new(1,100)
+
+    assert_equal 1, f.translate(1)
+    assert_equal 2, f.translate(2)
+    assert_equal 4, f.translate(4)
+    assert_equal 7, f.translate(7)
+  end
 end
