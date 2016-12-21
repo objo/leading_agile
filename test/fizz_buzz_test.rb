@@ -10,14 +10,16 @@ end
 class FizzBuzzTestCase < Test::Unit::TestCase
 
   def test_start_must_be_greater_than_zero
-    assert_raises RuntimeError do
+    exception = assert_raises RuntimeError do
       FizzBuzz.new(-1, 1)
     end
+    assert_match /Start must be greater than zero/, exception.message
   end
 
   def test_end_must_be_100_or_less
-    assert_raises RuntimeError do
+    exception = assert_raises RuntimeError do
       FizzBuzz.new(1, 101)
     end
+    assert_match /End must be 100 or less/, exception.message
   end
 end
