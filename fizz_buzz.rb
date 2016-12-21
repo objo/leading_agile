@@ -12,6 +12,6 @@ class FizzBuzz
   end
 
   def to_s
-    (0..100).collect { |num| translate(num) }
+    (1..100).collect { |num| translate(num) }
   end
 end
