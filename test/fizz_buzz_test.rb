@@ -5,6 +5,14 @@ class FizzBuzz
     raise "Start must be greater than zero" if _start < 1
     raise "End must be 100 or less" if _end > 100
   end
+
+  def translate(number)
+    if (number % 3 == 0)
+      return "Fizz"
+    else
+      return number
+    end
+  end
 end
 
 class FizzBuzzTestCase < Test::Unit::TestCase
@@ -21,5 +29,11 @@ class FizzBuzzTestCase < Test::Unit::TestCase
       FizzBuzz.new(1, 101)
     end
     assert_match /End must be 100 or less/, exception.message
+  end
+
+  def test_number_divisible_by_three_returns_fizz
+    f = FizzBuzz.new(1,100)
+
+    assert_equal "Fizz", f.translate(3)
   end
 end
